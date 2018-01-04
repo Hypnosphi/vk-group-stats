@@ -1,0 +1,16 @@
+{
+  "name": "vk-group-stats",
+  "version": "0.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {},
+  "devDependencies": {
+    "coffee-script": "^1.12.3"
+  },
+  "scripts": {
+    "compile": "coffee -c *.coffee",
+    "start": "node app.js"
+  },
+  "author": "",
+  "license": "ISC"
+}

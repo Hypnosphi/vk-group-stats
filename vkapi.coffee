@@ -16,7 +16,7 @@ makeParser = (cb = ->) ->
       body += chunk
     res.on 'end', (end) ->
       data = JSON.parse body
-      throw data.error if data.error
+      throw new Error data.error.error_msg if data.error
       cb data.response
 
 module.exports = (token) ->

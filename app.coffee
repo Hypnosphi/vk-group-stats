@@ -30,8 +30,8 @@ vk.get 'groups.getMembers', params, (res) ->
         message: message
   members = res.items
   console.log "retrieved #{members.length} members:"
-#  for member in members
-#    console.log fullname member
+  for member in members
+    console.log fullname member
   fs.writeFileSync('members.json', JSON.stringify members)
   members
 

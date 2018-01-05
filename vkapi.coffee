@@ -15,12 +15,9 @@ makeParser = (cb = ->) ->
     res.on 'data', (chunk) ->
       body += chunk
     res.on 'end', (end) ->
-      try
-        data = JSON.parse body
-        throw data.error if data.error
-        cb data.response
-      catch e
-        console.log e
+      data = JSON.parse body
+      throw data.error if data.error
+      cb data.response
 
 module.exports = (token) ->
   get: (method, params = {}, cb = ->) ->

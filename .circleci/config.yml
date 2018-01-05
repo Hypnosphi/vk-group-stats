@@ -44,9 +44,13 @@ jobs:
           paths:
             - members.json
           key: members-{{ checksum "members.json" }}
+
+      - store_artifacts:
+          name: "Store members as artifacts"
+          path: members.json
 workflows:
   version: 2
-  check:
+  check-cron:
     jobs:
       - check
     triggers:
@@ -56,3 +60,6 @@ workflows:
             branches:
               only:
                 - master
+  check:
+    jobs:
+      - check

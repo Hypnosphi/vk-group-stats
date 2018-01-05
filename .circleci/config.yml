@@ -31,7 +31,7 @@ jobs:
       - restore_cache:
           name: "Restore members cache"
           keys:
-          - members
+          - members-
 
       - run:
           name: "Run the check"
@@ -43,7 +43,7 @@ jobs:
           name: "Cache members"
           paths:
             - members.json
-          key: members
+          key: members-{{ checksum "members.json" }}
 workflows:
   version: 2
   check:

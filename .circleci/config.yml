@@ -49,9 +49,3 @@ workflows:
   check:
     jobs:
       - check
-    triggers:
-      - schedule:
-          cron: "0 * * * *"
-          filters:
-            branches:
-              only: master

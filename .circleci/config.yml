@@ -43,7 +43,7 @@ jobs:
           name: "Cache members"
           paths:
             - members.json
-          key: members-{{ checksum "members.json" }}
+          key: members-{{ checksum "timestamp.txt" }}
 
       - store_artifacts:
           name: "Store members as artifacts"

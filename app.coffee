@@ -33,7 +33,7 @@ vk.get 'groups.getMembers', params, (res) ->
   for member in members
     console.log fullname member
   fs.writeFileSync('members.json', JSON.stringify members)
-  fs.writeFileSync('timestamp.txt', Date.now())
+  fs.writeFileSync('timestamp.txt', String Date.now())
   members
 
 fullname = ({first_name, last_name}) -> "#{first_name} #{last_name}"

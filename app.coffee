@@ -2,6 +2,7 @@ vkapi = require './vkapi.js'
 http = require 'http'
 fs = require 'fs'
 
+# https://oauth.vk.com/authorize?client_id=6879470&scope=wall,offline&response_type=token
 vk = vkapi process.env.VK_GROUP_STATS_TOKEN
 params =
   group_id: +process.env.VK_GROUP_STATS_TARGET_GROUP_ID
